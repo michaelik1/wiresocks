@@ -21,8 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: core7-warp
-            image: ghcr.io/michaelik1/core7-warp
+          - name: wiresocks
+            image: ghcr.io/michaelik1/wiresocks
             context: .
             dockerfile: ./Dockerfile
 
