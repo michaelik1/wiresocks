@@ -1,15 +1,16 @@
+name: core7
+
 networks:
-  wg-warp-network:
+  warp-network:
     external: true
 
 services:
-  warp-wg:
+  warp:
     build: .
-    image: warp-wg:latest
-    container_name: warp-wg
+    image: core7-warp:dev
     restart: unless-stopped
     networks:
-      - wg-warp-network
+      - warp-network
     cap_add:
       - NET_ADMIN
     sysctls:
