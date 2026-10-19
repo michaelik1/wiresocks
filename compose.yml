@@ -1,16 +1,7 @@
-name: core7
-
-networks:
-  warp-network:
-    external: true
-
 services:
-  warp:
-    build: .
-    image: core7-warp:dev
+  wiresocks:
+    image: wiresocks:latest
     restart: unless-stopped
-    networks:
-      - warp-network
     cap_add:
       - NET_ADMIN
     devices:
@@ -19,4 +10,4 @@ services:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
     volumes:
-      - /opt/core7/warp/wg0.conf:/config/wg_confs/wg0.conf:ro
+      - /path/to/wg0.conf:/config/wg_confs/wg0.conf:ro
