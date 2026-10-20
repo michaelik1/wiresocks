@@ -1,6 +1,6 @@
 services:
   wiresocks:
-    image: wiresocks:latest
+    image: ghcr.io/michaelik1/wiresocks:latest
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
